@@ -9,7 +9,7 @@ controller_templates:
       - Windows
     project: Test Repo New
     playbook: playbooks/windows/powershell_script.yml
-    execution_environment: Product Demo EE
+    execution_environment: Product Demos EE
     survey_enabled: true
     survey:
       name: ''
