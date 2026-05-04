@@ -20,7 +20,7 @@ controller_workflows:
         all_parents_must_converge: false
         unified_job_template: "Insights" # <-- REPLACE: Passed as a simple string
         success_nodes: 
-          - node201
+          - Approve Workflow
           
       # Child Node: Converges after both syncs complete
       - identifier: Approve Workflow
