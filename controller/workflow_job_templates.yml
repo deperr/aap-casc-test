@@ -5,36 +5,25 @@ controller_workflows:
 - name: CASC | Windows | Workflow
   organization: Default
   allow_simultaneous: true
-  simplified_workflow_nodes:
+simplified_workflow_nodes:
       
       # Root Node A: Project Sync
       - identifier: project_sync_test_repo
         all_parents_must_converge: false
-        unified_job_template:
-          name: Test Repo New
-          type: project
-          organization:
-            name: Default
+        unified_job_template: "Test Repo New" # Passed as a simple string
         success_nodes: 
-          - node201 # Points to the approval node
+          - node201
 
       # Root Node B: Inventory Sync
       - identifier: inventory_sync_home_lab
         all_parents_must_converge: false
-        unified_job_template:
-          name: Home Lab
-          type: inventory_source
-          inventory: 
-            name: Home Lab
-            organization:
-              name: Default
-          organization: null
+        unified_job_template: "Home Lab" # <-- REPLACE: Passed as a simple string
         success_nodes: 
-          - node201 # Points to the approval node
+          - node201
           
       # Child Node: Converges after both syncs complete
       - identifier: node201
-        all_parents_must_converge: true # Wait for both root nodes
+        all_parents_must_converge: true
         approval_node:
           name: Simple approval node name
           description: Approve this to proceed in workflow
