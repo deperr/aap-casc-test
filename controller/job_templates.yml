@@ -1,0 +1,31 @@
+# ansible-playbook pb_controller_cac.yml --tags job_templates
+---
+controller_templates:
+
+  - name: TEST CASC | Windows | Query Services
+    job_type: run
+    organization: Default
+    credentials:
+      - Windows
+    project: Test Repo New
+    playbook: playbooks/windows/powershell_script.yml
+    execution_environment: Product Demo EE
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Server Name or Pattern
+          type: text
+          variable: _hosts
+          default: os_windows
+          required: true
+        - question_name: Service state to query
+          type: multiplechoice
+          variable: service_state
+          default: Running
+          choices:
+            - Running
+            - Stopped
+            - Maybe
+          required: true
