@@ -5,7 +5,7 @@ controller_workflows:
 - name: CASC | Windows | Workflow
   organization: Default
   allow_simultaneous: true
-  workflow_nodes:
+  simplified_workflow_nodes:
     
     # Root Node A: Project Sync
     - identifier: Sync Test Repo New
@@ -24,14 +24,15 @@ controller_workflows:
       related:
         success_nodes:
           - identifier: Next Downstream Job
-      unified_job_template:
-        inventory:
-          name: Home Lab # Name of the inventory source
-          organization:
-            name: Default
-            type: organization
-        name: Home Lab
-        type: inventory
+      unified_job_template: Home Lab
+      # unified_job_template:
+      #   inventory:
+      #     name: Home Lab # Name of the inventory source
+      #     organization:
+      #       name: Default
+      #       type: organization
+      #   name: Home Lab
+      #   type: inventory
 
     # Converged Child Node: Waits for both syncs to succeed
     - identifier: Next Downstream Job
