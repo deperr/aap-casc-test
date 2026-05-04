@@ -4,58 +4,43 @@ controller_workflows:
 
 - name: CASC | Windows | Workflow
   organization: Default
-  labels: ['windows']
   allow_simultaneous: true
-  ask_variables_on_launch: false
   workflow_nodes:
-    - identifier: Sync Project
+    
+    # Root Node A: Project Sync
+    - identifier: Sync Test Repo New
       related:
         success_nodes:
-          - identifier: Query Services
+          - identifier: Next Downstream Job
       unified_job_template:
         name: Test Repo New
         organization:
           name: Default
           type: organization
         type: project
-    - identifier: Sync Inventory
+
+    # Root Node B: Inventory Sync
+    - identifier: Sync Home Lab Inventory
       related:
         success_nodes:
-          - identifier: Query Services
+          - identifier: Next Downstream Job
+      unified_job_template:
+        name: Home Lab
         organization:
           name: Default
           type: organization
-        type: inventory
-    - identifier: Query Services
+        type: inventory_source
+
+    # Converged Child Node: Waits for both syncs to succeed
+    - identifier: Next Downstream Job
+      all_parents_must_converge: true
       unified_job_template:
-        - name: TEST CASC | Windows | Query Services
-          organization:
-            name: Default
-            type: organization
-          type: job_template
+        name: Your Standard Job Template # Replace with your actual job template
+        organization:
+          name: Default
+          type: organization
+        type: job_template
 
-        
-
-
-# ===
-# TEST CASC | Windows | Query Services
-# - name: AWS // Decommission Workflow
-#   organization: Autodotes
-#   ask_variables_on_launch: true
-#   survey_enabled: true
-#   allow_simultaneous: true
-#   survey_spec:
-#     name: workflow survey
-#     description: workflow passthrough variables
-#     spec:
-#       - question_name: VM Names
-#         question_description: comma separated list of names (vm1,vm2)
-#         max: 1024
-#         min: 0
-#         required: true
-#         type: text
-#         variable: aws_ec2_names_list
-#         default: OVERRIDE_ME
 #   workflow_nodes:
 #   - identifier: Sync Project
 #     related:
