@@ -10,7 +10,7 @@ controller_templates:
     project: Test Repo New
     playbook: playbooks/windows/powershell_script.yml
     execution_environment: Product Demos EE
-    labels: ['windows']
+    labels: ['casc','windows']
     inventory: Home Lab
     survey_enabled: true
     survey:

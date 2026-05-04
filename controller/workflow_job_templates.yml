@@ -1,0 +1,21 @@
+---
+
+controller_workflows:
+
+- name: CASC | Windows | Workflow
+  organization: Default
+  labels: ['windows']
+  allow_simultaneous: true
+  ask_variables_on_launch: false
+  workflow_nodes:
+  - identifier: project_sync_node
+    unified_job_template: Test Repo New
+    success_nodes:
+      - "converged_playbook_node"
+  - identifier: "inventory_sync_node"
+    unified_job_template: Home Lab
+    success_nodes:
+      - "converged_playbook_node"
+  - identifier: "converged_playbook_node"
+    unified_job_template: "My standard playbook JT"
+    all_parents_must_converge: true
