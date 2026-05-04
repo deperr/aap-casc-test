@@ -20,8 +20,8 @@ controller_workflows:
         type: project
 
     - identifier: Update Inventory
-      related:
-        success_nodes: Next Downstream Job
+      # related:
+      #   success_nodes: Next Downstream Job
       unified_job_template: Home Lab
       success_nodes:
         - Next Downstream Job
