@@ -4,9 +4,20 @@ controller_workflows:
 
 - name: CASC | Windows | Workflow
   organization: Default
-  description: "Windows workflow. This is built and managed by Configuration as Code."
+  description: "[NOTE] This is built and managed by Configuration as Code. Any changes can be overwritten."
   allow_simultaneous: true
   labels: ['windows']
+  survey_enabled: true
+  survey_spec:
+    name: ''
+    description: ''
+    spec:
+      - question_name: Server Name or Pattern
+        type: text
+        variable: _hosts
+        required: true
+        default: os_windows
+
   simplified_workflow_nodes:
 
     # Root Node A: Project Sync
