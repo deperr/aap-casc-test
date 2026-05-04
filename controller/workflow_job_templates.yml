@@ -29,3 +29,7 @@ controller_workflows:
           name: Simple approval node name
           description: Approve this to proceed in workflow
           timeout: 900
+
+      - identifier: Run script
+        unified_job_template: TEST CASC | Windows | Query Services
+        
