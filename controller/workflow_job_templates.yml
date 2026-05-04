@@ -25,11 +25,11 @@ controller_workflows:
         success_nodes:
           - identifier: Next Downstream Job
       unified_job_template:
-        name: Home Lab
-        organization:
-          name: Default
-          type: organization
+        name: Home Lab # Name of the inventory source
         type: inventory_source
+        inventory:
+          organization:
+            name: Default
 
     # Converged Child Node: Waits for both syncs to succeed
     - identifier: Next Downstream Job
