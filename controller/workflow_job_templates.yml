@@ -11,14 +11,14 @@ controller_workflows:
     # Root Node A: Project Sync
     - identifier: Sync Project
       all_parents_must_converge: false
-      unified_job_template: "Test Repo New" # Passed as a simple string
+      unified_job_template: "Test Repo New"
       success_nodes: 
         - Approve Workflow
 
     # Root Node B: Inventory Sync
     - identifier: Sync Inventory
       all_parents_must_converge: false
-      unified_job_template: "Insights" # <-- REPLACE: Passed as a simple string
+      unified_job_template: "Insights"
       success_nodes: 
         - Approve Workflow
 
@@ -36,6 +36,11 @@ controller_workflows:
       unified_job_template: "TEST CASC | Windows | Query Services"
       always_nodes:
         - Second script
+      failure_nodes:
+        - Failure script
 
     - identifier: Second script
+      unified_job_template: "TEST CASC | Windows | Query Services"
+
+    - identifier: Failure script
       unified_job_template: "TEST CASC | Windows | Query Services"
