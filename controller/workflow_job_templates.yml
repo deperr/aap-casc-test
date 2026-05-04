@@ -4,6 +4,7 @@ controller_workflows:
 
 - name: CASC | Windows | Workflow
   organization: Default
+  description: "Windows workflow. This is built and managed by Configuration as Code."
   allow_simultaneous: true
   labels: ['windows']
   simplified_workflow_nodes:
@@ -49,3 +50,6 @@ controller_workflows:
     
     - identifier: Success script
       unified_job_template: "TEST CASC | Windows | Query Services"
+
+# The way that this works is the two nodes (project sync and inventory sync) are the root nodes
+# since there's nothing feeding into them. The child notes go based on the identifer.
