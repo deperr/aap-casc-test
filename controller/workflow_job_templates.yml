@@ -20,11 +20,11 @@ controller_workflows:
         type: project
 
     # Root Node B: Inventory Sync
-    - identifier: Sync Home Lab Inventory
-      related:
-        success_nodes:
-          - identifier: Next Downstream Job
-      unified_job_template: Home Lab
+    # - identifier: Sync Home Lab Inventory
+    #   related:
+    #     success_nodes:
+    #       - identifier: Next Downstream Job
+    #   unified_job_template: Home Lab
       # unified_job_template:
       #   inventory:
       #     name: Home Lab # Name of the inventory source
