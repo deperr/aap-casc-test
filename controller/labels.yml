@@ -9,3 +9,5 @@ controller_labels:
     organization: Default
   - name: demo
     organization: Default
+  - name: "Test"
+    organization: Default
