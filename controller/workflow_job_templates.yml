@@ -34,7 +34,7 @@ controller_workflows:
 
     - identifier: Run script
       unified_job_template: "TEST CASC | Windows | Query Services"
-      always_node:
+      always_nodes:
         - Second script
 
     - identifier: Second script
