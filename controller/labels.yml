@@ -3,11 +3,11 @@
 controller_labels:
   - name: cloud
     organization: Default
-  - name: linux
-    organization: Default
-  - name: windows
-    organization: Default
   - name: demo
     organization: Default
-  - name: "Test"
+  - name: linux
+    organization: Default
+  - name: network
+    organization: Default
+  - name: windows
     organization: Default
