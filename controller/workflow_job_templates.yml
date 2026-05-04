@@ -38,9 +38,14 @@ controller_workflows:
         - Second script
       failure_nodes:
         - Failure script
+      success_nodes:
+        - Success script
 
     - identifier: Second script
       unified_job_template: "TEST CASC | Windows | Query Services"
 
     - identifier: Failure script
+      unified_job_template: "TEST CASC | Windows | Query Services"
+    
+    - identifier: Success script
       unified_job_template: "TEST CASC | Windows | Query Services"
