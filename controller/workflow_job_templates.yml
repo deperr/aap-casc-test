@@ -5,76 +5,37 @@ controller_workflows:
 - name: CASC | Windows | Workflow
   organization: Default
   allow_simultaneous: true
-  simplified_workflow_nodes:
-    
-    # Root Node A: Project Sync
-    - identifier: Sync Test Repo New
-      related:
-        success_nodes:
-          - identifier: Next Downstream Job
-      unified_job_template:
-        name: Test Repo New
-        organization:
-          name: Default
-          type: organization
-        type: project
+ simplified_workflow_nodes:
+      
+      # Root Node A: Project Sync
+      - identifier: project_sync_test_repo
+        all_parents_must_converge: false
+        unified_job_template:
+          name: Test Repo New
+          type: project
+          organization:
+            name: Default
+        success_nodes: 
+          - node201 # Points to the approval node
 
-    - identifier: Update Inventory
-      # related:
-      #   success_nodes: Next Downstream Job
-      unified_job_template: Home Lab
-      success_nodes:
-        - Next Downstream Job
-    # Root Node B: Inventory Sync
-    # - identifier: Sync Home Lab Inventory
-    #   related:
-    #     success_nodes:
-    #       - identifier: Next Downstream Job
-    #   unified_job_template: Home Lab
-      # unified_job_template:
-      #   inventory:
-      #     name: Home Lab # Name of the inventory source
-      #     organization:
-      #       name: Default
-      #       type: organization
-      #   name: Home Lab
-      #   type: inventory
-
-    # Converged Child Node: Waits for both syncs to succeed
-    - identifier: Next Downstream Job
-      all_parents_must_converge: true
-      unified_job_template:
-        name: TEST CASC | Windows | Query Services # Replace with your actual job template
-        organization:
-          name: Default
-          type: organization
-        type: job_template
-
-#   workflow_nodes:
-#   - identifier: Sync Project
-#     related:
-#       success_nodes:
-#       - identifier: Delete VM(s)
-#     unified_job_template:
-#       name: Cloud Mgmt
-#       organization:
-#         name: Autodotes
-#         type: organization
-#       type: project
-#   - identifier: Delete VM(s)
-#     related:
-#       success_nodes:
-#       - identifier: Delete CI(s)
-#     unified_job_template:
-#       name: AWS // Delete VM
-#       organization:
-#         name: Autodotes
-#         type: organization
-#       type: job_template
-#   - identifier: Delete CI(s)
-#     unified_job_template:
-#       name: ServiceNow // Delete CIs
-#       organization:
-#         name: Autodotes
-#         type: organization
-#       type: job_template
+      # Root Node B: Inventory Sync
+      - identifier: inventory_sync_home_lab
+        all_parents_must_converge: false
+        unified_job_template:
+          name: Home Lab
+          type: inventory_source
+          inventory: 
+            name: Home Lab
+            organization:
+              name: Default
+          organization: null
+        success_nodes: 
+          - node201 # Points to the approval node
+          
+      # Child Node: Converges after both syncs complete
+      - identifier: node201
+        all_parents_must_converge: true # Wait for both root nodes
+        approval_node:
+          name: Simple approval node name
+          description: Approve this to proceed in workflow
+          timeout: 900
