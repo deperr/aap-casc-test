@@ -11,6 +11,3 @@ controller_labels:
     organization: Default
   - name: windows
     organization: Default
-  - name: Test
-    organization: Default
-    state: absent
