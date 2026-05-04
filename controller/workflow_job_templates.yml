@@ -5,6 +5,7 @@ controller_workflows:
 - name: CASC | Windows | Workflow
   organization: Default
   allow_simultaneous: true
+  labels: ['windows']
   simplified_workflow_nodes:
       
       # Root Node A: Project Sync
