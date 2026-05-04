@@ -9,21 +9,21 @@ controller_workflows:
   simplified_workflow_nodes:
       
       # Root Node A: Project Sync
-      - identifier: project_sync_test_repo
+      - identifier: Sync Project
         all_parents_must_converge: false
         unified_job_template: "Test Repo New" # Passed as a simple string
         success_nodes: 
-          - node201
+          - Approve Workflow
 
       # Root Node B: Inventory Sync
-      - identifier: inventory_sync_home_lab
+      - identifier: Sync Inventory
         all_parents_must_converge: false
         unified_job_template: "Insights" # <-- REPLACE: Passed as a simple string
         success_nodes: 
           - node201
           
       # Child Node: Converges after both syncs complete
-      - identifier: node201
+      - identifier: Approve Workflow
         all_parents_must_converge: true
         approval_node:
           name: Simple approval node name
