@@ -7,30 +7,30 @@ controller_workflows:
   allow_simultaneous: true
   labels: ['windows']
   simplified_workflow_nodes:
-      
-      # Root Node A: Project Sync
-      - identifier: Sync Project
-        all_parents_must_converge: false
-        unified_job_template: "Test Repo New" # Passed as a simple string
-        success_nodes: 
-          - Approve Workflow
 
-      # Root Node B: Inventory Sync
-      - identifier: Sync Inventory
-        all_parents_must_converge: false
-        unified_job_template: "Insights" # <-- REPLACE: Passed as a simple string
-        success_nodes: 
-          - Approve Workflow
-          
-      # Child Node: Converges after both syncs complete
-      - identifier: Approve Workflow
-        all_parents_must_converge: true
-        approval_node:
-          name: Simple approval node name
-          description: Approve this to proceed in workflow
-          timeout: 900
-        always_nodes:
-          - Run script
+    # Root Node A: Project Sync
+    - identifier: Sync Project
+      all_parents_must_converge: false
+      unified_job_template: "Test Repo New" # Passed as a simple string
+      success_nodes: 
+        - Approve Workflow
 
-      - identifier: Run script
-        unified_job_template: TEST CASC | Windows | Query Services
+    # Root Node B: Inventory Sync
+    - identifier: Sync Inventory
+      all_parents_must_converge: false
+      unified_job_template: "Insights" # <-- REPLACE: Passed as a simple string
+      success_nodes: 
+        - Approve Workflow
+
+    # Child Node: Converges after both syncs complete
+    - identifier: Approve Workflow
+      all_parents_must_converge: true
+      approval_node:
+        name: Simple approval node name
+        description: Approve this to proceed in workflow
+        timeout: 900
+      always_nodes:
+        - Run script
+
+    - identifier: Run script
+      unified_job_template: "TEST CASC | Windows | Query Services"
