@@ -29,5 +29,4 @@ controller_templates:
           choices:
             - Running
             - Stopped
-            - Maybe
           required: true
