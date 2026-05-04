@@ -5,7 +5,7 @@ controller_workflows:
 - name: CASC | Windows | Workflow
   organization: Default
   allow_simultaneous: true
- simplified_workflow_nodes:
+  simplified_workflow_nodes:
       
       # Root Node A: Project Sync
       - identifier: project_sync_test_repo
