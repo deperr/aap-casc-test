@@ -35,7 +35,7 @@ controller_workflows:
     - identifier: Next Downstream Job
       all_parents_must_converge: true
       unified_job_template:
-        name: Your Standard Job Template # Replace with your actual job template
+        name: TEST CASC | Windows | Query Services # Replace with your actual job template
         organization:
           name: Default
           type: organization
