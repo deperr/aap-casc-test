@@ -17,7 +17,7 @@ controller_workflows:
       # Root Node B: Inventory Sync
       - identifier: inventory_sync_home_lab
         all_parents_must_converge: false
-        unified_job_template: "Home Lab" # <-- REPLACE: Passed as a simple string
+        unified_job_template: "Insights" # <-- REPLACE: Passed as a simple string
         success_nodes: 
           - node201
           
