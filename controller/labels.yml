@@ -8,4 +8,4 @@ controller_labels:
   - name: windows
     organization: Default
   - name: demo
-    organization: demo
+    organization: Default
