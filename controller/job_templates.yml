@@ -163,9 +163,9 @@ controller_templates:
           required: true
           type: multiplechoice
           choices:
-            - 6
-            - 7
-          default: 6
+            - "6"
+            - "7"
+          default: "6"
 
   #############################
   # Windows Templates
