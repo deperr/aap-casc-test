@@ -229,9 +229,9 @@ controller_templates:
           required: true
           type: multiplechoice
           choices:
-            - true
-            - false
-          default: true
+            - "true"
+            - "false"
+          default: "true"
 
   - name: ServiceNow | Create Incident Ticket (new)
     description: "NOTE: This is managed by Config as Code. Manual changes may be overwritten."
