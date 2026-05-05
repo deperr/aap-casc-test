@@ -30,7 +30,4 @@ controller_inventory_sources:
     inventory: Home Lab (New)
     credential: Insights
     overwrite: true
-    source_vars:
-      groups:
-        cloud_aws: true
-        os_linux: "platform_details == 'Red Hat Enterprise Linux'"
+    group: os_linux
