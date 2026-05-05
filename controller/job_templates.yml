@@ -119,14 +119,15 @@ controller_templates:
   #############################
   # Windows Templates
   #############################
-  
-  - name: TEST CASC | Windows | Query Services
+
+  - name: Windows | Query Services (New)
+    description: "Query services on Windows hosts with PowerShell Script. NOTE: Template is managed with CaSC"
     job_type: run
     organization: Default
     credentials:
       - Windows
     project: Test Repo New
-    playbook: playbooks/windows/powershell_script.yml
+    playbook: playbooks/windows/powershell.yml
     execution_environment: Product Demos EE
     labels: ['windows']
     inventory: Home Lab
@@ -138,7 +139,7 @@ controller_templates:
         - question_name: Server Name or Pattern
           type: text
           variable: _hosts
-          default: os_windows
+          default: dc01.dperrone.dev
           required: true
         - question_name: Service state to query
           type: multiplechoice
