@@ -175,3 +175,48 @@ controller_templates:
           variable: ps_script
           default: Get-Service | Where-Object -FilterScript {$_.Status -eq 'running'} | Select-Object -Property 'Name'
           required: true
+
+  - name: TEST CASC | Windows | Active Directory User Management
+    job_type: run
+    organization: Default
+    credentials:
+      - Windows
+    project: Test Repo New
+    playbook: playbooks/windows/powershell_script.yml
+    execution_environment: Product Demos EE
+    labels: ['windows']
+    inventory: Home Lab
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Server Name or Pattern
+          variable: _hosts
+          required: true
+          type: text
+          default: dc01.dperrone.dev
+        - question_name: User Management Action
+          variable: user_management_action
+          required: true
+          type: multiplechoice
+          choices:
+            - Add
+            - Remove
+          default: Add
+        - question_name: First Name
+          variable: firstname
+          required: true
+          type: text
+          default: Ansible
+        - question_name: Last Name
+          variable: surname
+          required: true
+          type: text
+          default: TestUser
+        - question_name: Company
+          variable: company
+          required: false
+          type: text
+          default: Test Company
+
