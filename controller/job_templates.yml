@@ -1,5 +1,5 @@
-# ansible-playbook pb_controller_cac.yml --tags job_templates
 ---
+
 controller_templates:
 
   - name: TEST CASC | Windows | Query Services
