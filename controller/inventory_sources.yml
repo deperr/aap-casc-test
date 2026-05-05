@@ -33,3 +33,4 @@ controller_inventory_sources:
     source_vars:
       groups:
         os_linux: true
+        web_servers: "inventory_hostname.startswith('web')"
