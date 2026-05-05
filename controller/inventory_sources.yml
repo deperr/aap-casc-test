@@ -27,6 +27,7 @@ controller_inventory_sources:
   - name: Red Hat Insights
     organization: Default
     source: Insights
+    inventory: Home Lab (New)
     credential: Insights
     overwrite: true
     source_vars:
