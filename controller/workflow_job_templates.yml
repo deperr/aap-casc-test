@@ -6,9 +6,9 @@ controller_workflows:
   # Linux Workflows
   #############################
 
-  - name: CASC | Linux | Workflow | Patch and STIG
+  - name: Linux | Workflow | Patch and STIG
     organization: Default
-    description: "Workflow to patch and STIG Linux hosts. Managed with CasC. Any changes may be overwritten."
+    description: "NOTE: This is managed by Config as Code. Manual changes may be overwritten."
     allow_simultaneous: true
     labels: ['linux', 'security']
     survey_enabled: true
@@ -50,7 +50,7 @@ controller_workflows:
           - STIG Hosts
 
       - identifier: STIG Hosts
-        unified_job_template: "TEST CASC | Linux | DISA STIG"
+        unified_job_template: "Linux | DISA STIG"
 
   #############################
   # Windows Workflows
