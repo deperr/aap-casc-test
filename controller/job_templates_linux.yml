@@ -22,4 +22,3 @@ controller_templates:
           variable: _hosts
           default: os_linux
           required: true
-        - question_name: Service state to query
