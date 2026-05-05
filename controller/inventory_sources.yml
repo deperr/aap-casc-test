@@ -30,4 +30,6 @@ controller_inventory_sources:
     inventory: Home Lab (New)
     credential: Insights
     overwrite: true
-    group: os_linux
+    source_vars:
+      groups:
+        os_linux: true
