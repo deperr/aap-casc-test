@@ -108,15 +108,18 @@ controller_workflows:
             - absent
           default: new
     simplified_workflow_nodes:
-      - identifier: ServiceNow | Create Incident Ticket (new)
+      - identifier: Create Ticket
+        unified_job_template: ServiceNow | Create Incident Ticket (new)
         success_nodes:
           - ServiceNow | Update Incident Ticket (new)
 
-      - identifier: ServiceNow | Update Incident Ticket (new)
+      - identifier: Update Ticket
+        unified_job_template: ServiceNow | Update Incident Ticket (new)
         success_nodes:
           - ServiceNow | Close Incident Ticket (new)
 
-      - identifier: ServiceNow | Close Incident Ticket (new)
+      - identifier: Close Ticket
+        unified_job_template: ServiceNow | Close Incident Ticket (new)
 
 
   #############################
