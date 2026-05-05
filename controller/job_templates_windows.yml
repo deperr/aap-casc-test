@@ -56,3 +56,112 @@ controller_templates:
           variable: ps_script
           default: Get-Service | Where-Object -FilterScript {$_.Status -eq 'running'} | Select-Object -Property 'Name'
           required: true
+
+  - name: TEST CASC | Linux | Fact Scan
+    job_type: run
+    organization: Default
+    credentials:
+      - Linux
+    project: Test Repo New
+    playbook: playbooks/linux/fact_scan.yml
+    execution_environment: Product Demos EE
+    labels: ['linux']
+    inventory: Home Lab (New)
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Server Name or Pattern
+          type: text
+          variable: _hosts
+          default: os_linux
+          required: true
+
+  - name: TEST CASC | Linux | DISA STIG
+    job_type: run
+    organization: Default
+    credentials:
+      - Linux
+    project: Ansible Product Demos
+    playbook: linux/disa_stig.yml
+    execution_environment: Product Demos EE
+    labels: ['linux']
+    inventory: Home Lab (New)
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Server Name or Pattern
+          type: text
+          variable: _hosts
+          default: os_linux
+          required: true
+
+  - name: TEST CASC | Linux | Install Application
+    job_type: run
+    organization: Default
+    credentials:
+      - Linux
+    project: Test Repo New
+    playbook: playbooks/linux/fact_scan.yml
+    execution_environment: Product Demos EE
+    labels: ['linux']
+    inventory: Home Lab (New)
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Server Name or Pattern
+          type: text
+          variable: _hosts
+          default: web01.dperrone.dev
+          required: true
+        - question_name: Application to be installed
+          type: multiplechoice
+          variable: app_role
+          default: apache
+          required: true
+          choices:
+            - apache
+            - kafka
+            - nginx
+            - opa
+        - question_name: Apache Web Page Title
+          type: text
+          variable: apache_test_page_heading
+          default: Apache Test Page
+          required: false
+        - question_name: Apache Web Page Body
+          type: text
+          variable: apache_test_page_message
+          default: This is an Apache server running correctly in the Podman container!
+          required: false
+        - question_name: Kafka Topic
+          type: text
+          variable: demo_topic
+          default: eda-test
+          required: false
+
+  - name: TEST CASC | Linux | Patch Hosts
+    job_type: run
+    organization: Default
+    credentials:
+      - Linux
+    project: Test Repo New
+    playbook: playbooks/linux/patching.yml
+    execution_environment: Product Demos EE
+    labels: ['linux']
+    inventory: Home Lab (New)
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Server Name or Pattern
+          type: text
+          variable: _hosts
+          default: os_linux
+          required: true
