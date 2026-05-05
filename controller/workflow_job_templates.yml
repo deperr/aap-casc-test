@@ -45,7 +45,7 @@ controller_workflows:
           - Patch Linux Hosts
         
       - identifier: Patch Linux Hosts
-        unified_job_template: "TEST CASC | Linux | Patch Hosts"
+        unified_job_template: "Linux | Patch Hosts"
         success_nodes:
           - STIG Hosts
 
