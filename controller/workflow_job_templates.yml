@@ -56,7 +56,7 @@ controller_workflows:
   # Windows Workflows
   #############################
 
-  - name: CASC | Windows | Workflow
+  - name: Windows | Workflow [CaSC]
     organization: Default
     description: "[NOTE] This is built and managed by Configuration as Code. Any changes can be overwritten."
     allow_simultaneous: true
@@ -98,7 +98,7 @@ controller_workflows:
           - Run script
 
       - identifier: Run script
-        unified_job_template: "TEST CASC | Windows | Query Services"
+        unified_job_template: "Windows | Query Services [CaSC]"
         always_nodes:
           - Second script
         failure_nodes:
@@ -107,13 +107,13 @@ controller_workflows:
           - Success script
 
       - identifier: Second script
-        unified_job_template: "TEST CASC | Windows | Query Services"
+        unified_job_template: "Windows | Query Services [CaSC]"
 
       - identifier: Failure script
-        unified_job_template: "TEST CASC | Windows | Query Services"
+        unified_job_template: "Windows | Query Services [CaSC]"
       
       - identifier: Success script
-        unified_job_template: "TEST CASC | Windows | Query Services"
+        unified_job_template: "Windows | Query Services [CaSC]"
 
   # The way that this works is the two nodes (project sync and inventory sync) are the root nodes
   # since there's nothing feeding into them. The child notes go based on the identifer.
