@@ -12,15 +12,15 @@ controller_workflows:
     allow_simultaneous: true
     labels: ['linux', 'security']
     survey_enabled: true
-      survey_spec:
-        name: ''
-        description: ''
-        spec:
-          - question_name: Server Name or Pattern
-            type: text
-            variable: _hosts
-            required: true
-            default: web02.dperrone.dev
+    survey_spec:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Server Name or Pattern
+          type: text
+          variable: _hosts
+          required: true
+          default: web02.dperrone.dev
     simplified_workflow_nodes:
 
       - identifier: Sync Project
