@@ -6,6 +6,8 @@ controller_labels:
     organization: Default
   - name: demo
     organization: Default
+  - name: itsm
+    organization: Default
   - name: linux
     organization: Default
   - name: network

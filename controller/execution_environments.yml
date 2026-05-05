@@ -2,6 +2,10 @@
 
 controller_execution_environments:
 
-  - name: Product Demos EE (CaSC)
+  - name: Product Demos EE (CaC)
     description: EE for Ansible Product Demos (APD)
     image: quay.io/ansible-product-demos/apd-ee-25:20260409
+
+  - name: ServiceNow EE (CaC)
+    description: EE for ServiceNow automations
+    image: quay.io/dperrone/servicenow_ee:20251107
