@@ -10,5 +10,7 @@ controller_labels:
     organization: Default
   - name: network
     organization: Default
+  - name: security
+    organization: Default
   - name: windows
     organization: Default
