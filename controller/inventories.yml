@@ -6,9 +6,13 @@ controller_inventories:
   #   organization: Default
   #   description: Demo using microsoft.ad.ldap inventory plugin
 
+  - name: AWS Inventory (Open Environment)
+    organization: Default
+    description: Hosts deployed in RHDPS.
+
   - name: Home Lab (New)
     organization: Default 
-    description: Home lab inventory
+    description: Hosts within my home lab.
 
   # - name: Proxmox Inventory
   #   organization: Default 
