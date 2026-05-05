@@ -53,6 +53,71 @@ controller_workflows:
         unified_job_template: "Linux | DISA STIG"
 
   #############################
+  # ServiceNow Workflows
+  #############################
+
+  - name: ServiceNow | Workflow | Incident Lifecycle (new)
+    organization: Default
+    description: "NOTE: This is managed by Config as Code. Manual changes may be overwritten."
+    allow_simultaneous: true
+    labels: ['itsm']
+    survey_enabled: true
+    survey_spec:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Enter Short Description
+          variable: incident_short_description
+          required: true
+          type: text
+          default: Incident created via AAP workflow.
+        - question_name: Describe the Incident
+          variable: incident_description
+          required: true
+          type: textarea
+          default: This is an incident created using AAP with the servicenow.itsm collection.
+        - question_name: Incident Urgency
+          variable: incident_urgency
+          required: true
+          type: multiplechoice
+          choices:
+            - high
+            - medium
+            - low
+          default: medium
+        - question_name: Incident Impact
+          variable: incident_impact
+          required: true
+          type: multiplechoice
+          choices:
+            - high
+            - medium
+            - low
+          default: medium
+        - question_name: Incident State
+          variable: incident_state
+          required: true
+          type: multiplechoice
+          choices:
+            - new
+            - in_progress
+            - on_hold
+            - resolved
+            - closed
+            - cancelled
+            - absent
+          default: new
+    simplified_workflow_nodes:
+      - identifier: ServiceNow | Create Incident Ticket (new)
+        success_nodes:
+          - ServiceNow | Update Incident Ticket (new)
+
+      - identifier: ServiceNow | Update Incident Ticket (new)
+        success_nodes:
+          - ServiceNow | Close Incident Ticket (new)
+
+
+  #############################
   # Windows Workflows
   #############################
 
