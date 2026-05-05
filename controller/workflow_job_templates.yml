@@ -2,6 +2,60 @@
 
 controller_workflows:
 
+  #############################
+  # Linux Workflows
+  #############################
+
+  - name: CASC | Linux | Workflow | Patch and STIG
+    organization: Default
+    description: "Workflow to patch and STIG Linux hosts. [NOTE] This is built and managed by Configuration as Code. Any changes can be overwritten."
+    allow_simultaneous: true
+    labels: ['linux', 'security']
+    survey_enabled: true
+      survey_spec:
+        name: ''
+        description: ''
+        spec:
+          - question_name: Server Name or Pattern
+            type: text
+            variable: _hosts
+            required: true
+            default: web02.dperrone.dev
+    simplified_workflow_nodes:
+
+      - identifier: Sync Project
+        all_parents_must_converge: false
+        unified_job_template: "Test Repo New"
+        success_nodes: 
+          - Approve Workflow
+
+      - identifier: Sync Inventory
+        all_parents_must_converge: false
+        unified_job_template: "Insights"
+        success_nodes: 
+          - Approve Workflow
+
+      - identifier: Approve Workflow
+        all_parents_must_converge: true
+        approval_node:
+          name: Simple approval node name
+          description: Approve this to proceed in workflow
+          timeout: 900
+        success_nodes:
+          - Patch Linux Hosts
+        
+      - identifier: Patch Linux Hosts
+        unified_job_template: "TEST CASC | Linux | Patch Hosts"
+        success_nodes:
+          - STIG Hosts
+
+      - identifier: STIG Hosts
+        unified_job_template: "TEST CASC | Linux | DISA STIG"
+
+  #############################
+  # Windows Workflows
+  #############################
+
   - name: CASC | Windows | Workflow
     organization: Default
     description: "[NOTE] This is built and managed by Configuration as Code. Any changes can be overwritten."

@@ -2,60 +2,9 @@
 
 controller_templates:
 
-  - name: TEST CASC | Windows | Query Services
-    job_type: run
-    organization: Default
-    credentials:
-      - Windows
-    project: Test Repo New
-    playbook: playbooks/windows/powershell_script.yml
-    execution_environment: Product Demos EE
-    labels: ['windows']
-    inventory: Home Lab
-    survey_enabled: true
-    survey:
-      name: ''
-      description: ''
-      spec:
-        - question_name: Server Name or Pattern
-          type: text
-          variable: _hosts
-          default: os_windows
-          required: true
-        - question_name: Service state to query
-          type: multiplechoice
-          variable: service_state
-          default: Running
-          choices:
-            - Running
-            - Stopped
-          required: true
-
-  - name: TEST CASC | Windows | Run PowerShell Script
-    job_type: run
-    organization: Default
-    credentials:
-      - Windows
-    project: Test Repo New
-    playbook: playbooks/windows/powershell_script.yml
-    execution_environment: Product Demos EE
-    labels: ['windows']
-    inventory: Home Lab
-    survey_enabled: true
-    survey:
-      name: ''
-      description: ''
-      spec:
-        - question_name: Server Name or Pattern
-          type: text
-          variable: _hosts
-          default: os_windows
-          required: true
-        - question_name: PowerShell Script
-          type: textarea
-          variable: ps_script
-          default: Get-Service | Where-Object -FilterScript {$_.Status -eq 'running'} | Select-Object -Property 'Name'
-          required: true
+  #############################
+  # Linux Templates
+  #############################
 
   - name: TEST CASC | Linux | Fact Scan
     job_type: run
@@ -164,4 +113,64 @@ controller_templates:
           type: text
           variable: _hosts
           default: os_linux
+          required: true
+
+
+  #############################
+  # Windows Templates
+  #############################
+  
+  - name: TEST CASC | Windows | Query Services
+    job_type: run
+    organization: Default
+    credentials:
+      - Windows
+    project: Test Repo New
+    playbook: playbooks/windows/powershell_script.yml
+    execution_environment: Product Demos EE
+    labels: ['windows']
+    inventory: Home Lab
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Server Name or Pattern
+          type: text
+          variable: _hosts
+          default: os_windows
+          required: true
+        - question_name: Service state to query
+          type: multiplechoice
+          variable: service_state
+          default: Running
+          choices:
+            - Running
+            - Stopped
+          required: true
+
+  - name: TEST CASC | Windows | Run PowerShell Script
+    job_type: run
+    organization: Default
+    credentials:
+      - Windows
+    project: Test Repo New
+    playbook: playbooks/windows/powershell_script.yml
+    execution_environment: Product Demos EE
+    labels: ['windows']
+    inventory: Home Lab
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Server Name or Pattern
+          type: text
+          variable: _hosts
+          default: os_windows
+          required: true
+        - question_name: PowerShell Script
+          type: textarea
+          variable: ps_script
+          default: Get-Service | Where-Object -FilterScript {$_.Status -eq 'running'} | Select-Object -Property 'Name'
           required: true
