@@ -116,6 +116,8 @@ controller_workflows:
         success_nodes:
           - ServiceNow | Close Incident Ticket (new)
 
+      - identifier: ServiceNow | Close Incident Ticket (new)
+
 
   #############################
   # Windows Workflows
