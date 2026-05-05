@@ -167,6 +167,72 @@ controller_templates:
             - "7"
           default: "6"
 
+
+  - name: ServiceNow | Create Change Request (CR) (new)
+    description: "NOTE: This is managed by Config as Code. Manual changes may be overwritten."
+    job_type: run
+    organization: Default
+    credentials:
+      - ServiceNow (Dev)
+    project: Test Repo New
+    playbook: playbooks/itsm/snow_create_change_request.yml
+    execution_environment: ServiceNow EE (CaC)
+    labels: ['itsm']
+    inventory: Home Lab (New)
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Enter Short Description
+          variable: cr_short_description
+          required: true
+          type: text
+          default: Incident created via AAP workflow.
+        - question_name: Describe the Change Request (CR)
+          variable: cr_description
+          required: true
+          type: textarea
+          default: This is an incident created using AAP with the servicenow.itsm collection.
+        - question_name: Change Request Urgency
+          variable: cr_urgency
+          required: true
+          type: multiplechoice
+          choices:
+            - high
+            - medium
+            - low
+          default: medium
+        - question_name: IncidentChange Request Impact
+          variable: cr_impact
+          required: true
+          type: multiplechoice
+          choices:
+            - high
+            - medium
+            - low
+          default: medium
+        - question_name: Change Request State
+          variable: incident_state
+          required: true
+          type: multiplechoice
+          choices:
+            - assess
+            - authorize
+            - scheduled
+            - implement
+            - review
+            - closed
+          default: assess
+        - question_name: Create Change Request
+          variable: create_change_request
+          required: true
+          type: multiplechoice
+          choices:
+            - true
+            - false
+          default: true
+
   - name: ServiceNow | Create Incident Ticket (new)
     description: "NOTE: This is managed by Config as Code. Manual changes may be overwritten."
     job_type: run
@@ -203,7 +269,7 @@ controller_templates:
             - low
           default: medium
         - question_name: Incident Impact
-          variable: closure_method
+          variable: incident_impact
           required: true
           type: multiplechoice
           choices:
