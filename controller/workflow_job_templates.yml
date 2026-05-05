@@ -17,7 +17,6 @@ controller_workflows:
         variable: _hosts
         required: true
         default: os_windows
-
   simplified_workflow_nodes:
 
     # Root Node A: Project Sync
