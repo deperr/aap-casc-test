@@ -18,7 +18,7 @@ controller_projects:
     default_environment: Product Demos EE (CaC)
     wait: true
 
-  - name: Personal | EDA (CaC)
+  - name: Personal | EDA Demos (CaC)
     organization: Default
     scm_type: git
     scm_url: https://github.com/deperr/eda-demos.git
