@@ -9,7 +9,7 @@ eda_rulebook_activations:
     rulebook: url_check.yml
     decision_environment: Default Decision Environment
     eda_credentials:
-      - Controller Credential
+      - Ansible Automation Platform Controller
     enabled: false
     log_level: debug
     restart_policy: never
