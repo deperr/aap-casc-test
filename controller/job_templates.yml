@@ -3,6 +3,43 @@
 controller_templates:
 
   #############################
+  # Config as Code Templates
+  #############################
+
+  # - name: CASC | Setup | EDA
+  #   description: JT to set up EDA as code.
+  #   job_type: run
+  #   organization: Default
+  #   credentials:
+  #     - Controller Credential (dperrone)
+  #   project: Test CASC Repo
+  #   playbook: setup_eda.yml
+  #   execution_environment: Product Demos Event
+  #   inventory: Home Lab
+
+  # - name: CASC | Setup | Hub
+  #   description: JT to set up Hub as code.
+  #   job_type: run
+  #   organization: Default
+  #   credentials:
+  #     - Controller Credential (dperrone)
+  #   project: Test CASC Repo
+  #   playbook: setup_hub.yml
+  #   execution_environment: Product Demos Event
+  #   inventory: Home Lab
+
+  # - name: CASC | Setup | Platform
+  #   description: JT to set up Platform as code.
+  #   job_type: run
+  #   organization: Default
+  #   credentials:
+  #     - Controller Credential (dperrone)
+  #   project: Test CASC Repo
+  #   playbook: setup_platform.yml
+  #   execution_environment: Product Demos Event
+  #   inventory: Home Lab
+
+  #############################
   # Event Driven Templates
   #############################
 
