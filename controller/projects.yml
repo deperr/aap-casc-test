@@ -1,0 +1,19 @@
+---
+
+controller_projects:
+
+  - name: Ansible Product Demos Bootstrap (CaC)
+    organization: Default
+    scm_type: git
+    scm_url: https://github.com/ansible/product-demos-bootstrap
+    scm_branch: main
+    default_environment: Product Demos EE (CaC)
+    wait: true
+
+  - name: Ansible Product Demos (CaC)
+    organization: Default
+    scm_type: git
+    scm_url: https://github.com/ansible/product-demos
+    scm_branch: main
+    default_environment: Product Demos EE (CaC)
+    wait: true
