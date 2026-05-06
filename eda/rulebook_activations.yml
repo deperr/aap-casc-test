@@ -9,7 +9,7 @@ eda_rulebook_activations:
     rulebook: rulebooks/url_check.yml
     decision_environment: Default Decision Environment
     eda_credentials:
-      - Controller Credential (CaC)
+      - Controller Credential
     enabled: false
     log_level: debug
     restart_policy: never
