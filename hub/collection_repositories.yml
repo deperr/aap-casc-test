@@ -7,7 +7,6 @@ hub_collection_repositories:
     pulp_labels:
       pipeline: "approved"
     distribution:
-      name: "community (cac)"
-      base_path: community_cac
+      name: "community_cac"
       state: present
     remote: community (cac)
