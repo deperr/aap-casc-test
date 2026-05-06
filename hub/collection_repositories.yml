@@ -1,0 +1,12 @@
+---
+
+hub_collection_repositories:
+
+  - name: "community (cac)"
+    description: "PAH with Community collections"
+    pulp_labels:
+      pipeline: "approved"
+    distribution:
+      name: "community (cac)"
+      state: present
+    remote: community (cac)
