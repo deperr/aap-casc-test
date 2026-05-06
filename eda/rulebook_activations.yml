@@ -6,7 +6,7 @@ eda_rulebook_activations:
     description: Rulebook that checks that one or more URLs is reachable
     organization: Default
     project: "Personal | EDA Demos (CaC)"
-    rulebook: rulebooks/url_check.yml
+    rulebook: url_check.yml
     decision_environment: Default Decision Environment
     eda_credentials:
       - Controller Credential
