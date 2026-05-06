@@ -8,5 +8,6 @@ hub_collection_repositories:
       pipeline: "approved"
     distribution:
       name: "community (cac)"
+      base_path: community_cac
       state: present
     remote: community (cac)
