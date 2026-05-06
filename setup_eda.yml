@@ -5,13 +5,13 @@
   gather_facts: false
 
   vars_files:
-    - common/setup_controller.yml
+    - common/setup_eda.yml
 
   tasks:
     - name: Include Controller configuration files
       tags: always
       ansible.builtin.include_vars:
-        dir: controller
+        dir: eda
 
     - name: Call dispatch role for Controller configuration
       tags: always
