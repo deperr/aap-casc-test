@@ -184,7 +184,7 @@ controller_templates:
           default: web01.dperrone.dev
           required: true
         - question_name: Application to be installed
-          type: multselect
+          type: multiselect
           variable: selected_packages
           default: git
           required: true
