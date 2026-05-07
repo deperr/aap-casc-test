@@ -2,7 +2,8 @@
 
 controller_projects:
 
-  - name: Ansible Product Demos Bootstrap (CaC)
+  - name: Ansible | Product Demos Bootstrap
+    description: "Query services on Windows hosts with PowerShell Script. NOTE: Template is managed with CaSC"
     organization: Default
     scm_type: git
     scm_url: https://github.com/ansible/product-demos-bootstrap
@@ -10,7 +11,8 @@ controller_projects:
     default_environment: Product Demos EE (CaC)
     wait: true
 
-  - name: Ansible Product Demos (CaC)
+  - name: Ansible | Product Demos
+    description: "Query services on Windows hosts with PowerShell Script. NOTE: Template is managed with CaSC"
     organization: Default
     scm_type: git
     scm_url: https://github.com/ansible/product-demos
@@ -18,10 +20,28 @@ controller_projects:
     default_environment: Product Demos EE (CaC)
     wait: true
 
-  - name: Personal | EDA Demos (CaC)
+  - name: Personal | AAP Demos
+    organization: Default
+    scm_type: git
+    scm_url: https://github.com/deperr/ansible-demos.git
+    scm_branch: main
+    default_environment: Product Demos EE (CaC)
+    wait: true
+
+  - name: Personal | EDA Demos
+    description: "Query services on Windows hosts with PowerShell Script. NOTE: Template is managed with CaSC"
     organization: Default
     scm_type: git
     scm_url: https://github.com/deperr/eda-demos.git
+    scm_branch: main
+    default_environment: Product Demos EE (CaC)
+    wait: true
+
+  - name: Personal | Configuration as Code
+    description: "Query services on Windows hosts with PowerShell Script. NOTE: Template is managed with CaSC"
+    organization: Default
+    scm_type: git
+    scm_url: https://github.com/deperr/ansible-cac.git
     scm_branch: main
     default_environment: Product Demos EE (CaC)
     wait: true
