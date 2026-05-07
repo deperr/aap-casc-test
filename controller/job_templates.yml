@@ -99,7 +99,7 @@ controller_templates:
     organization: Default
     credentials:
       - Linux
-    project: Ansible Product Demos
+    project: "Ansible | Product Demos"
     playbook: linux/disa_stig.yml
     execution_environment: Product Demos EE
     labels: ['linux', 'security']
