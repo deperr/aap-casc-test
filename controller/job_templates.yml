@@ -77,7 +77,7 @@ controller_templates:
     organization: Default
     credentials:
       - Linux
-    project: Test Repo New
+    project: "Personal | AAP Demos""
     playbook: playbooks/linux/fact_scan.yml
     execution_environment: Product Demos EE
     labels: ['linux']
