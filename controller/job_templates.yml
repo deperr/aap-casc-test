@@ -529,6 +529,54 @@ controller_templates:
           type: text
           default: dc01.dperrone.dev
 
+  - name: "Windows | Patching"
+    description: "NOTE: This is managed by Config as Code. Manual changes may be overwritten."
+    job_type: check
+    organization: Default
+    credentials:
+      - Windows
+    use_fact_cache: true
+    ask_job_type_on_launch: true
+    project: "Personal | AAP Demos"
+    playbook: playbooks/windows/patching.yml
+    execution_environment: Product Demos EE
+    labels: ['windows']
+    inventory: Home Lab
+    survey_enabled: true
+    survey:
+      name: ''
+      description: ''
+      spec:
+        - question_name: Server Name or Pattern
+          type: text
+          variable: _hosts
+          required: false
+        - question_name: Update categories
+          type: multiselect
+          variable: win_update_categories
+          required: false
+          default: SecurityUpdates
+          choices:
+            - Application
+            - Connectors
+            - CriticalUpdates
+            - DefinitionUpdates
+            - DeveloperKits
+            - FeaturePacks Guidance
+            - SecurityUpdates
+            - ServicePacks
+            - Tools
+            - UpdateRollups
+            - Updates
+        - question_name: Reboot after install?
+          type: multiplechoice
+          variable: allow_reboot
+          required: false
+          default: 'Yes'
+          choices:
+            - 'Yes'
+            - 'No'
+
   - name: Windows | Run PowerShell Script
     description: "Query services on Windows hosts with PowerShell Script. NOTE: Template is managed with CaSC"
     job_type: run
@@ -559,13 +607,13 @@ controller_templates:
             - Stopped
           required: true
 
-  - name: Windows | Run PowerShell (adhoc)
+  - name: Windows | Run PowerShell Command
     job_type: run
     organization: Default
     credentials:
       - Windows
     project: "Personal | AAP Demos"
-    playbook: playbooks/windows/powershell_script.yml
+    playbook: playbooks/windows/powershell.yml
     execution_environment: Product Demos EE
     labels: ['windows']
     inventory: Home Lab

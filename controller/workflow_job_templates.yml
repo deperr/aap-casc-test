@@ -56,7 +56,7 @@ controller_workflows:
   # ServiceNow Workflows
   #############################
 
-  - name: ServiceNow | Workflow | Incident Lifecycle (new)
+  - name: ServiceNow | Workflow | Incident Lifecycle
     organization: Default
     description: "NOTE: This is managed by Config as Code. Manual changes may be overwritten."
     allow_simultaneous: true
