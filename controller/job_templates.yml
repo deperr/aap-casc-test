@@ -551,6 +551,7 @@ controller_templates:
           type: text
           variable: _hosts
           required: false
+          default: dc01.dperrone.dev
         - question_name: Update categories
           type: multiselect
           variable: win_update_categories
