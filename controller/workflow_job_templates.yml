@@ -109,17 +109,17 @@ controller_workflows:
           default: new
     simplified_workflow_nodes:
       - identifier: Create Ticket
-        unified_job_template: "ServiceNow | Create Incident Ticket (new)"
+        unified_job_template: "ServiceNow | Create Incident Ticket"
         success_nodes:
           - Update Ticket
 
       - identifier: Update Ticket
-        unified_job_template: "ServiceNow | Update Incident Ticket (new)"
+        unified_job_template: "ServiceNow | Update Incident Ticket"
         success_nodes:
           - Close Ticket
 
       - identifier: Close Ticket
-        unified_job_template: "ServiceNow | Close Incident Ticket (new)"
+        unified_job_template: "ServiceNow | Close Incident Ticket"
 
 
   #############################
@@ -168,7 +168,7 @@ controller_workflows:
           - Run script
 
       - identifier: Run script
-        unified_job_template: "Windows | Query Services [CaSC]"
+        unified_job_template: "Windows | Query Services"
         always_nodes:
           - Second script
         failure_nodes:
@@ -177,13 +177,13 @@ controller_workflows:
           - Success script
 
       - identifier: Second script
-        unified_job_template: "Windows | Query Services [CaSC]"
+        unified_job_template: "Windows | Query Services]"
 
       - identifier: Failure script
-        unified_job_template: "Windows | Query Services [CaSC]"
+        unified_job_template: "Windows | Query Services"
       
       - identifier: Success script
-        unified_job_template: "Windows | Query Services [CaSC]"
+        unified_job_template: "Windows | Query Services"
 
   # The way that this works is the two nodes (project sync and inventory sync) are the root nodes
   # since there's nothing feeding into them. The child notes go based on the identifer.
