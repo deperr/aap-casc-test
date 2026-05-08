@@ -510,12 +510,14 @@ controller_templates:
   - name: "Windows | Connectivity Test"
     description: "NOTE: This is managed by Config as Code. Manual changes may be overwritten."
     job_type: run
+    organization: Default
+    credentials:
+      - Windows
     project: "Personal | AAP Demos"
     playbook: playbooks/windows/connection_test.yml
     execution_environment: Product Demos EE
     labels: ['windows']
-    credentials:
-      - Windows
+    inventory: Home Lab
     survey_enabled: true
     survey:
       name: ''
