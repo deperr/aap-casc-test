@@ -28,7 +28,7 @@ controller_inventory_sources:
     organization: Default
     source: insights
     inventory: Home Lab (New)
-    credential: Insights
+    credential: Insights (svc key)
     overwrite: true
     source_vars:
       groups:

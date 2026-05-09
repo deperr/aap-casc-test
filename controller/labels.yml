@@ -2,6 +2,8 @@
 
 controller_labels:
 
+  - name: casc
+    organization: Default
   - name: cloud
     organization: Default
   - name: demo
