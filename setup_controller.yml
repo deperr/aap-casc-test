@@ -18,12 +18,12 @@
       ansible.builtin.include_role:
         name: infra.aap_configuration.dispatch
 
-    - name: Include EDA configuration files
-      tags: always
-      ansible.builtin.include_vars:
-        dir: eda
+    # - name: Include EDA configuration files
+    #   tags: always
+    #   ansible.builtin.include_vars:
+    #     dir: eda
 
-    - name: Call dispatch role for EDA configuration
-      tags: always
-      ansible.builtin.include_role:
-        name: infra.aap_configuration.dispatch
+    # - name: Call dispatch role for EDA configuration
+    #   tags: always
+    #   ansible.builtin.include_role:
+    #     name: infra.aap_configuration.dispatch
