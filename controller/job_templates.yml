@@ -232,7 +232,7 @@ controller_templates:
       - ServiceNow (Dev)
     project: "Personal | AAP Demos"
     playbook: playbooks/itsm/snow_close_incident.yml
-    execution_environment: ServiceNow EE (CaC)
+    execution_environment: ServiceNow EE
     labels: ['itsm']
     inventory: Home Lab (New)
     survey_enabled: true
@@ -277,7 +277,7 @@ controller_templates:
       - ServiceNow (Dev)
     project: "Personal | AAP Demos"
     playbook: playbooks/itsm/snow_create_change_request.yml
-    execution_environment: ServiceNow EE (CaC)
+    execution_environment: ServiceNow EE
     labels: ['itsm']
     inventory: Home Lab (New)
     survey_enabled: true
@@ -342,7 +342,7 @@ controller_templates:
       - ServiceNow (Dev)
     project: "Personal | AAP Demos"
     playbook: playbooks/itsm/snow_create_incident.yml
-    execution_environment: ServiceNow EE (CaC)
+    execution_environment: ServiceNow EE
     labels: ['itsm']
     inventory: Home Lab (New)
     survey_enabled: true
@@ -400,7 +400,7 @@ controller_templates:
       - ServiceNow (Dev)
     project: "Personal | AAP Demos"
     playbook: playbooks/itsm/snow_create_problem.yml
-    execution_environment: ServiceNow EE (CaC)
+    execution_environment: ServiceNow EE
     labels: ['itsm']
     inventory: Home Lab (New)
     survey_enabled: true
@@ -453,7 +453,7 @@ controller_templates:
       - ServiceNow (Dev)
     project: "Personal | AAP Demos"
     playbook: playbooks/itsm/snow_update_incident.yml
-    execution_environment: ServiceNow EE (CaC)
+    execution_environment: ServiceNow EE
     labels: ['itsm']
     inventory: Home Lab (New)
 
