@@ -5,3 +5,15 @@ aap_teams:
   - name: devops-new
     description: DevOps team within the Default organization
     organization: Default
+  - name: infrastructure-new
+    description: Infrastructure team within the Default organization
+    organization: Default
+  - name: linux-new
+    description: Linux team within the Default organization
+    organization: Default
+  - name: netops-new
+    description: Network team within the Default organization
+    organization: Default
+  - name: windows-new
+    description: Windows team within the Default organization
+    organization: Default
