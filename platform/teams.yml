@@ -1,0 +1,7 @@
+---
+
+aap_teams:
+
+  - name: devops-new
+    description: DevOps team within the Default organization
+    organization: Default
